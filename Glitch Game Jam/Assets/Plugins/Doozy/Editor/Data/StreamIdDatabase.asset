@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1142824b18ef490e9311385acfe1c486, type: 3}
+  m_Name: StreamIdDatabase
+  m_EditorClassIdentifier: 
+  Database:
+    Items:
+    - Category: ButtonPresses
+      Name: EscapePressed
+    - Category: ButtonPresses
+      Name: InventoryPressed
+    - Category: ButtonPresses
+      Name: LegendPressed
+    - Category: GameControl
+      Name: PauseGame
+    - Category: GameControl
+      Name: UnpauseGame
+    - Category: GameFlow
+      Name: ChallengeComplete
+    - Category: GameFlow
+      Name: Defeated
+    - Category: GameFlow
+      Name: EndGame
+    - Category: GameFlow
+      Name: ExitGameMenu
+    - Category: GameFlow
+      Name: FinishedTreeGeneration
+    - Category: GameFlow
+      Name: GameMenu
+    - Category: GameFlow
+      Name: GoToHub
+    - Category: GameFlow
+      Name: OpenShop
+    - Category: GameFlow
+      Name: OpenShopSkillTree
+    - Category: GameFlow
+      Name: OpenTOI
+    - Category: GameFlow
+      Name: ReturnToMainMenu
+    - Category: GameFlow
+      Name: ReturnToSkillTree
+    - Category: GameFlow
+      Name: RoomStarted
+    - Category: GameFlow
+      Name: ShowMerchant
+    - Category: GameFlow
+      Name: ShowRewards
+    - Category: GameFlow
+      Name: ShowSkillCrafter
+    - Category: GameFlow
+      Name: ShowSkillEnhancer
+    - Category: GameFlow
+      Name: ShowUnknownEvent
+    - Category: None
+      Name: None
+    - Category: UIFlowInternal
+      Name: ShowInventory
+    - Category: UIFlowInternal
+      Name: ShowShop
