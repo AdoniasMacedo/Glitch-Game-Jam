@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Destroy Specific Creature Challenge", menuName = "Challenges/Destroy Specific Creature")]
 public class DestroySpecificCreatureChallenge : Challenge
 {
-    public Creature targetCreature;
+    public string creatureName;
     private bool isTargetCreatureDestroyed;
 
     public override void Setup()
@@ -27,7 +27,7 @@ public class DestroySpecificCreatureChallenge : Challenge
 
     private void HandleCreatureDestroyed(Creature creature)
     {
-        if (creature == targetCreature)
+        if (creature.creatureName == creatureName)
         {
             isTargetCreatureDestroyed = true;
         }
