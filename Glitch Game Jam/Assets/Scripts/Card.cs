@@ -23,7 +23,6 @@ public class Card : ScriptableObject
     [SerializeReference]
     public List<Challenge> challenges;
 
-    public Blessing blessing;
     public Reward reward;
     public Bargain bargain;
 }

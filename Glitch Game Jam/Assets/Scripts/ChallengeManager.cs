@@ -17,6 +17,12 @@ public class ChallengeManager : MonoBehaviour
         if (activeChallenge != null && activeChallenge.IsCompleted())
         {
             Debug.Log("Challenge Completed: " + activeChallenge.challengeName);
+
+            if (activeChallenge.reward != null)
+            {
+                RewardManager.Instance.ProcessReward(activeChallenge.reward, gameObject);
+            }
+
             activeChallenge.Teardown();
             activeChallenge = null;
         }
