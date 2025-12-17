@@ -20,7 +20,7 @@ public class ChallengeManager : MonoBehaviour
 
             if (activeChallenge.reward != null)
             {
-                RewardManager.Instance.ProcessReward(activeChallenge.reward, gameObject);
+                RewardManager.Instance.PresentRewardChoice(activeChallenge.reward, gameObject);
             }
 
             activeChallenge.Teardown();

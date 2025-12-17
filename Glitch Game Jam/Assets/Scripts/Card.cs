@@ -9,6 +9,8 @@ public class Card : ScriptableObject
     public new string name;
     [TextArea(5,10)]
     public string description;
+
+    public Sprite cardSprite;
     
     public CardCircle circle;
     public CardType type;
@@ -24,5 +26,4 @@ public class Card : ScriptableObject
     public List<Challenge> challenges;
 
     public Reward reward;
-    public Bargain bargain;
 }

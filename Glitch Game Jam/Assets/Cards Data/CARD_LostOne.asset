@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692a53820d3106940a30204ac7eeac47, type: 3}
   m_Name: CARD_LostOne
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: Lost One
+  description: "Um pequeno e inofensivo esp\xEDrito perdido."
   circle: 0
-  type: 0
-  cost: 0
+  type: 1
+  cost: 1
   cardPower: 0
+  challenges: []
+  reward:
+    cardChoices: []
+    blessingChoices: []
