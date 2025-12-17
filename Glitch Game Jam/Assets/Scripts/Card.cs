@@ -15,6 +15,7 @@ public class Card : ScriptableObject
     public CardCircle circle;
     public CardType type;
     public CardCost cost;
+    public int costValue;
 
     [SerializeReference]
     public List<Skills> skills;
