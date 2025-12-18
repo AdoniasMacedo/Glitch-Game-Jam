@@ -59,3 +59,52 @@ O `CreatureRegistry` é um singleton que rastreia todas as criaturas ativas na c
 - **Registrar Criatura**: `Register(Creature creature)` adiciona uma criatura à lista de criaturas ativas.
 - **Cancelar Registro de Criatura**: `Unregister(Creature creature)` remove uma criatura da lista de criaturas ativas.
 - **Criaturas Ativas**: A propriedade `ActiveCreatures` fornece uma lista somente leitura de todas as criaturas ativas.
+
+## CombatManager
+
+O `CombatManager` orquestra os turnos, eventos e condições de vitória/derrota no sistema de combate.
+
+### Componentes Principais
+
+#### Creature.cs
+
+A classe `Creature` representa qualquer entidade de combate no campo.
+
+- **Atributos:**
+    - `creatureName`: O nome da criatura.
+    - `health`/`maxHealth`: Os pontos de vida da criatura.
+    - `attackPower`: O dano que a criatura causa.
+    - `isEnemy`: Marque esta opção se a criatura pertencer ao oponente.
+- **Ações:**
+    - O método `PerformAction()` define o comportamento da criatura durante o turno do oponente.
+
+#### Card.cs
+
+A classe `Card` é um `ScriptableObject` que define as cartas do jogo.
+
+- **Atributos:**
+    - `name`/`description`: O nome e a descrição da carta.
+    - `costValue`: O custo de `mana` para jogar a carta.
+- **Habilidades (`Skills`):**
+    - A lista `skills` contém as ações que a carta executa ao ser jogada (ex: `DamageSkill`, `HealSkill`).
+
+#### Player.cs
+
+A classe `Player` gerencia o estado do jogador.
+
+- `essence`/`maxEssence`: Os pontos de vida do jogador.
+- `mana`/`maxMana`: Os recursos do jogador para jogar cartas.
+
+### Fluxo do Combate
+
+O `CombatManager` gerencia o combate através de uma máquina de estados:
+
+1.  **PREPARATION:**
+    - A mão inicial é comprada e a lógica de "mulligan" é executada.
+2.  **PLAYERTURN:**
+    - O jogador pode jogar cartas, deduzindo seu custo de `mana` e acionando suas habilidades.
+3.  **ENEMYTURN:**
+    - Cada criatura inimiga executa sua `PerformAction()`.
+    - Se o jogador não tiver criaturas em campo, ele perde "Essência".
+4.  **VICTORY/DEFEAT:**
+    - No final de cada turno, o `CombatManager` verifica se o `Challenge` foi concluído (vitória) ou se a "Essência" do jogador chegou a zero (derrota).
