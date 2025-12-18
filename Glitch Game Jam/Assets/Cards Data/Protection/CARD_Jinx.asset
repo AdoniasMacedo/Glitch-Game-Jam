@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 692a53820d3106940a30204ac7eeac47, type: 3}
-  m_Name: CARD_LostOne
+  m_Name: CARD_Jinx
   m_EditorClassIdentifier: 
-  name: Lost One
-  description: "Um pequeno e inofensivo esp\xEDrito perdido."
-  cardSprite: {fileID: 21300000, guid: 4417f3cb54581124dbb499df67f7accf, type: 3}
-  circle: 0
+  name: Jinx
+  description: Cursed Creature deals Half Damage
+  cardSprite: {fileID: 21300000, guid: e850f63d828ded145a312667a414d209, type: 3}
+  circle: 5
   type: 1
   cost: 1
-  costValue: 0
-  cardPower: 0
+  costValue: 1
+  cardPower: 1
   challenges: []
   reward:
     cardChoices: []

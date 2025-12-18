@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692a53820d3106940a30204ac7eeac47, type: 3}
+  m_Name: CARD_Oracle
+  m_EditorClassIdentifier: 
+  name: Oracle
+  description: Choose an Enemy. Reveal the top Card of your Deck. If the revealed
+    Card's Power is greater than the Enemy's, deal that much Damage to the Enemy.
+    Otherwise, Discard the revealed Card.
+  cardSprite: {fileID: 21300000, guid: 9c7d7e5d4521e184aa10ebf1d581313a, type: 3}
+  circle: 1
+  type: 1
+  cost: 1
+  costValue: 1
+  cardPower: 1
+  challenges: []
+  reward:
+    cardChoices: []
+    blessingChoices: []

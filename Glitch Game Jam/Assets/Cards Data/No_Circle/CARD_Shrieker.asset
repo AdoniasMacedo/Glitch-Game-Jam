@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692a53820d3106940a30204ac7eeac47, type: 3}
+  m_Name: CARD_Shrieker
+  m_EditorClassIdentifier: 
+  name: Shrieker
+  description: Deal 1 damage to a random enemy, [Power] times.
+  cardSprite: {fileID: 21300000, guid: a6fb5235aa85d6c42ab5e96c814a6149, type: 3}
+  circle: 0
+  type: 0
+  cost: 0
+  costValue: 2
+  cardPower: 0
+  challenges: []
+  reward:
+    cardChoices: []
+    blessingChoices: []

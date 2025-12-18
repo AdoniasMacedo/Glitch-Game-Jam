@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692a53820d3106940a30204ac7eeac47, type: 3}
+  m_Name: CARD_SeeThePresent
+  m_EditorClassIdentifier: 
+  name: See The Present
+  description: Choose [Power] Cards from your Hand and set them aside. Draw that
+    many Cards, then put the set aside Cards at the top of your Deck, in order.
+  cardSprite: {fileID: 21300000, guid: 8d3d4694813574a4db7de9f5f8b9b4a8, type: 3}
+  circle: 1
+  type: 1
+  cost: 1
+  costValue: 1
+  cardPower: 1
+  challenges: []
+  reward:
+    cardChoices: []
+    blessingChoices: []

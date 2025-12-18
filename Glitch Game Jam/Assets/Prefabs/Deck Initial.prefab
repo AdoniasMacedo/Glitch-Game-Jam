@@ -57,13 +57,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 11cb34e728b9e884da3e681ad85d903a, type: 2}
   - {fileID: 11400000, guid: 11cb34e728b9e884da3e681ad85d903a, type: 2}
   - {fileID: 11400000, guid: 11cb34e728b9e884da3e681ad85d903a, type: 2}
+  - {fileID: 11400000, guid: d3aaa8f650dcc0b47ba834836af28445, type: 2}
+  - {fileID: 11400000, guid: d3aaa8f650dcc0b47ba834836af28445, type: 2}
+  - {fileID: 11400000, guid: cdc3dd1cb43bea442961c390939c6956, type: 2}
   - {fileID: 11400000, guid: 11cb34e728b9e884da3e681ad85d903a, type: 2}
   - {fileID: 11400000, guid: 11cb34e728b9e884da3e681ad85d903a, type: 2}
   - {fileID: 11400000, guid: 11cb34e728b9e884da3e681ad85d903a, type: 2}
   - {fileID: 11400000, guid: 11cb34e728b9e884da3e681ad85d903a, type: 2}
-  - {fileID: 11400000, guid: 11cb34e728b9e884da3e681ad85d903a, type: 2}
-  - {fileID: 11400000, guid: 11cb34e728b9e884da3e681ad85d903a, type: 2}
-  - {fileID: 11400000, guid: 11cb34e728b9e884da3e681ad85d903a, type: 2}
+  - {fileID: 11400000, guid: 5296812bc9822a74cb1606e371ceed9c, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &8573382325923652765
 GameObject:
   m_ObjectHideFlags: 0

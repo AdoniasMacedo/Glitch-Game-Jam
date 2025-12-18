@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 692a53820d3106940a30204ac7eeac47, type: 3}
-  m_Name: New Card Data
+  m_Name: CARD_Shielding
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  cardSprite: {fileID: 0}
-  circle: 0
-  type: 0
-  cost: 0
-  costValue: 0
-  cardPower: 0
+  name: Shielding
+  description: Choose a Card on the Field. Until the end of next Turn, prevent [Power]
+    Damage to that Card.
+  cardSprite: {fileID: 21300000, guid: 7fb98e4b1f1a24843990a779e768de47, type: 3}
+  circle: 5
+  type: 1
+  cost: 1
+  costValue: 1
+  cardPower: 1
   challenges: []
   reward:
     cardChoices: []

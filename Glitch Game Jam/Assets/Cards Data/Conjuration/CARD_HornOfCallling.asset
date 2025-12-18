@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692a53820d3106940a30204ac7eeac47, type: 3}
+  m_Name: CARD_HornOfCallling
+  m_EditorClassIdentifier: 
+  name: Horn of Calling
+  description: At your turn's Start, create [Power] Militia Tokens with Power 1
+  cardSprite: {fileID: 21300000, guid: 2d3fd9c9d29affc428a2939ac6f5a86f, type: 3}
+  circle: 4
+  type: 1
+  cost: 1
+  costValue: 1
+  cardPower: 1
+  challenges: []
+  reward:
+    cardChoices: []
+    blessingChoices: []
