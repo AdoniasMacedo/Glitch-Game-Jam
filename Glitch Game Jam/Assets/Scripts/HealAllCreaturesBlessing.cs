@@ -9,7 +9,7 @@ public class HealAllCreaturesBlessing : Blessing
     {
         if (duration > 0)
         {
-            foreach (var creature in CreatureRegistry.ActiveCreatures)
+            foreach (var creature in CreatureRegistry.Instance.ActiveCreatures)
             {
                 // Assuming Creature has a Heal method
                 creature.Heal(healAmount);

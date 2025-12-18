@@ -8,7 +8,7 @@ public class GameState : MonoBehaviour
 
     public event Action OnRoundStart;
     public event Action OnRoundEnd;
-    public event Action<Card> OnCardPlayed;
+    public event Action<CardData> OnCardPlayed;
     public event Action<Creature> OnCreatureDestroyed;
     public event Action<Creature> OnCreatureSummoned;
 
@@ -35,9 +35,9 @@ public class GameState : MonoBehaviour
         OnRoundEnd?.Invoke();
     }
 
-    public void CardPlayed(Card card)
+    public void CardPlayed(CardData cardData)
     {
-        OnCardPlayed?.Invoke(card);
+        OnCardPlayed?.Invoke(cardData);
     }
 
     public void CreatureDestroyed(Creature creature)

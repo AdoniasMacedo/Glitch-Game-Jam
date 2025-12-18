@@ -54,9 +54,9 @@ public class RewardManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Alpha1 + i))
                 {
                     var selectedChoice = choices[i];
-                    if (selectedChoice is Card card)
+                    if (selectedChoice is CardData card)
                     {
-                        DeckManager.Instance.AddCard(card);
+                        //DeckManager.Instance.AddCard(card);
                         Debug.Log("Player selected card: " + card.name);
                     }
                     else if (selectedChoice is Blessing blessing)

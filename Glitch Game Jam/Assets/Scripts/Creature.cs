@@ -13,7 +13,7 @@ public class Creature : MonoBehaviour
         if (isEnemy)
         {
             // Simple AI: attack the player directly
-            Player player = FindObjectOfType<Player>();
+            Player player = FindAnyObjectByType<Player>();
             if (player != null)
             {
                 player.TakeDamage(attackPower);

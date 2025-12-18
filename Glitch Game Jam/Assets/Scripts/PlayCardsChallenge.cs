@@ -25,7 +25,7 @@ public class PlayCardsChallenge : Challenge
         return cardsPlayed >= cardsToPlay;
     }
 
-    private void HandleCardPlayed(Card card)
+    private void HandleCardPlayed(CardData cardData)
     {
         cardsPlayed++;
     }

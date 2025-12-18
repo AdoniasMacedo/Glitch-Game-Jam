@@ -64,7 +64,7 @@ public class CombatManager : MonoBehaviour
 
             if(enemyHasCreatures)
             {
-                Player player = FindObjectOfType<Player>();
+                Player player = FindAnyObjectByType<Player>();
                 player.TakeDamage(1);
             }
         }
@@ -87,7 +87,7 @@ public class CombatManager : MonoBehaviour
 
     void CheckEndCombatConditions()
     {
-        if (challengeManager.IsChallengeCompleted())
+        if (challengeManager.activeChallenge.IsCompleted())
         {
             state = CombatState.VICTORY;
             HandleVictory();
@@ -124,21 +124,21 @@ public class CombatManager : MonoBehaviour
         GameState.Instance.OnCreatureDestroyed -= OnCreatureDestroyed;
     }
 
-    private Card _currentCard;
+    private CardData _currentCardData;
     private Player _player;
 
     void Start()
     {
         state = CombatState.PREPARATION;
         StartPreparationPhase();
-        _player = FindObjectOfType<Player>();
+        _player = FindAnyObjectByType<Player>();
     }
 
-    private void OnCardPlayed(Card card)
+    private void OnCardPlayed(CardData cardData)
     {
-        if (_player.mana >= card.costValue)
+        if (_player.mana >= cardData.costValue)
         {
-            _currentCard = card;
+            _currentCardData = cardData;
             TargetingSystem.Instance.StartTargeting();
             TargetingSystem.Instance.OnTargetSelected += OnTargetSelected;
         }
@@ -146,11 +146,11 @@ public class CombatManager : MonoBehaviour
 
     private void OnTargetSelected(Creature target)
     {
-        _player.mana -= _currentCard.costValue;
-        DeckManager.Instance.hand.Remove(_currentCard);
-        DeckManager.Instance.discardPile.Add(_currentCard);
+        _player.mana -= _currentCardData.costValue;
+        /*DeckManager.Instance.hand.Remove(_currentCardData);
+        DeckManager.Instance.discardPile.Add(_currentCardData);*/
 
-        foreach (var skill in _currentCard.skills)
+        foreach (var skill in _currentCardData.skills)
         {
             if (skill is DamageSkill damageSkill)
             {
@@ -163,7 +163,7 @@ public class CombatManager : MonoBehaviour
             skill.Apply();
         }
 
-        _currentCard = null;
+        _currentCardData = null;
         TargetingSystem.Instance.OnTargetSelected -= OnTargetSelected;
     }
 

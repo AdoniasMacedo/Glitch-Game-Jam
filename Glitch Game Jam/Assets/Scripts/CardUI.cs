@@ -4,20 +4,20 @@ using UnityEngine.UI;
 
 public class CardUI : MonoBehaviour
 {
-    public event Action<Card, bool> onCardSelected;
-    private Card _card;
+    public event Action<CardData, bool> onCardSelected;
+    private CardData _cardData;
     private bool _isSelected;
 
-    public void SetCard(Card card)
+    public void SetCard(CardData cardData)
     {
-        _card = card;
+        _cardData = cardData;
         // Update UI elements with card data
     }
 
     public void OnPointerClick()
     {
         _isSelected = !_isSelected;
-        onCardSelected?.Invoke(_card, _isSelected);
+        onCardSelected?.Invoke(_cardData, _isSelected);
         // Update UI to reflect selection
     }
 }

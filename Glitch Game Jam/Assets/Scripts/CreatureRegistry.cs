@@ -7,7 +7,7 @@ public class CreatureRegistry : MonoBehaviour
     public static CreatureRegistry Instance => _instance;
 
     private static List<Creature> _activeCreatures = new List<Creature>();
-    public static IReadOnlyList<Creature> ActiveCreatures => _activeCreatures;
+    public IReadOnlyList<Creature> ActiveCreatures => _activeCreatures;
 
     private void Awake()
     {

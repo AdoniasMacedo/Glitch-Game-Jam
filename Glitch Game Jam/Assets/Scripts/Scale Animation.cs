@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class ScaleAnimation:MonoBehaviour
+public class ScaleCardAnimation:MonoBehaviour
 {
     private Vector3 originalScale;
 
@@ -19,7 +19,7 @@ public class ScaleAnimation:MonoBehaviour
     {
         while ((transform.localScale - originalScale).sqrMagnitude > 0.01f)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, originalScale, 0.1f);
+            transform.localScale = Vector3.Lerp(transform.localScale, originalScale, 0.05f);
             yield return duration;
         }
     }

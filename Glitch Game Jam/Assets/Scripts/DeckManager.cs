@@ -1,10 +1,15 @@
 using System.Collections.Generic;
+using DG.Tweening;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class DeckManager : MonoBehaviour
 {
     private static DeckManager _instance;
     public static DeckManager Instance => _instance;
+
+    public SplineContainer splineContainer;
 
     public List<Card> deck = new List<Card>();
     public List<Card> hand = new List<Card>();
@@ -23,10 +28,10 @@ public class DeckManager : MonoBehaviour
         }
     }
 
-    public void AddCard(Card card)
+    public void AddCard(Card cardData)
     {
-        deck.Add(card);
-        Debug.Log("Card added to deck: " + card.name);
+        deck.Add(cardData);
+        Debug.Log("Card added to deck: " + cardData.name);
     }
 
     public Card DrawCard()
@@ -44,11 +49,36 @@ public class DeckManager : MonoBehaviour
         return card;
     }
 
+    private void UpdateCardPositions()
+    {
+        if (hand.Count == 0)
+        {
+            return;
+        }
+
+        float cardSpacing = 1f / 7;
+        float firstCardPosition = 0.5f - (hand.Count - 1) * cardSpacing / 2;
+        Spline spline = splineContainer.Spline;
+
+        for (int i = 0; i < hand.Count; i++)
+        {
+            float p = firstCardPosition + i * cardSpacing;
+            Vector3 splinePosition = spline.EvaluatePosition(p);
+            Vector3 foward = spline.EvaluateTangent(p);
+            Vector3 up = spline.EvaluateUpVector(p);
+            Quaternion rotation = Quaternion.LookRotation(up, Vector3.Cross(up, foward).normalized);
+            hand[i].transform.DOMove(splinePosition, 0.25f);
+            hand[i].transform.DOLocalRotateQuaternion(rotation, 0.25f);
+        }
+    }
+
+    [Button]
     public void DrawInitialHand()
     {
         for (int i = 0; i < 7; i++)
         {
             DrawCard();
+            UpdateCardPositions();
         }
     }
 

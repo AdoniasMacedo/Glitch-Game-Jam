@@ -8,7 +8,7 @@ public class MulliganUI : MonoBehaviour
     public Button confirmButton;
     public List<CardUI> cardUIs; // Assuming a CardUI component exists
 
-    private List<Card> _cardsToReturn = new List<Card>();
+    private List<CardData> _cardsToReturn = new List<CardData>();
 
     void Start()
     {
@@ -21,26 +21,26 @@ public class MulliganUI : MonoBehaviour
         mulliganPanel.SetActive(true);
         for (int i = 0; i < DeckManager.Instance.hand.Count; i++)
         {
-            cardUIs[i].SetCard(DeckManager.Instance.hand[i]);
+            //cardUIs[i].SetCard(DeckManager.Instance.hand[i]);
             cardUIs[i].onCardSelected += OnCardSelected;
         }
     }
 
-    void OnCardSelected(Card card, bool isSelected)
+    void OnCardSelected(CardData cardData, bool isSelected)
     {
         if (isSelected)
         {
-            _cardsToReturn.Add(card);
+            _cardsToReturn.Add(cardData);
         }
         else
         {
-            _cardsToReturn.Remove(card);
+            _cardsToReturn.Remove(cardData);
         }
     }
 
     void ConfirmMulligan()
     {
-        DeckManager.Instance.Mulligan(_cardsToReturn);
+        //DeckManager.Instance.Mulligan(_cardsToReturn);
         mulliganPanel.SetActive(false);
         CombatManager.Instance.state = CombatState.PLAYERTURN;
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Effect : MonoBehaviour
 {
-    public void ApplyCardEffects(Card card, GameObject target)
+    public void ApplyCardEffects(CardData cardData, GameObject target)
     {
         /*foreach (var consequence in card.consequences)
         {

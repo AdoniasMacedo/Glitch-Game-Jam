@@ -1,30 +1,15 @@
-// Temporary comment to force file into patch
-using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "New Card", menuName = "Card")]
-public class Card : ScriptableObject
+public class Card:MonoBehaviour
 {
-    public new string name;
-    [TextArea(5,10)]
-    public string description;
+    [SerializeField] private Image cardFront;
+    private CardData data;
+    public CardData Data => data;
 
-    public Sprite cardSprite;
-    
-    public CardCircle circle;
-    public CardType type;
-    public CardCost cost;
-    public int costValue;
-
-    [SerializeReference]
-    public List<Skills> skills;
-    
-    [Range(0,1)]
-    public float cardPower;
-    
-    [SerializeReference]
-    public List<Challenge> challenges;
-
-    public Reward reward;
+    public void SetCardData(CardData cardData)
+    {
+        data = Instantiate(cardData);
+        cardFront.sprite = data.cardSprite;
+    }
 }
